@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block head %}
+  <meta charset="utf-8">
+  <title>Alice in Borderland CTF</title>
+  <link rel="stylesheet" href="{{ url_for('views.themes', theme='alice_in_borderland', path='css/style.css') }}">
+  <script src="{{ url_for('views.themes', theme='alice_in_borderland', path='js/animation.js') }}"></script>
+  {% endblock %}
+</head>
+<body>
+  <div class="card-bg"></div> <!-- falling cards animation -->
+
+  <nav class="navbar">
+    <a href="{{ url_for('views.pages', page='index') }}">Home</a>
+    <a href="{{ url_for('challenges.listing') }}">Challenges</a>
+    <a href="{{ url_for('scoreboard.listing') }}">Scoreboard</a>
+  </nav>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
